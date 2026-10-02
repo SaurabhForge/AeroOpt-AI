@@ -18,8 +18,8 @@
 
 ## 🌐 Live Cloud Deployment
 
-* **Render Frontend Web App:** [https://aeroopt-ai-frontend.onrender.com](https://aeroopt-ai-frontend.onrender.com)
-* **Render Backend API & WebSocket:** [https://aeroopt-ai-backend.onrender.com](https://aeroopt-ai-backend.onrender.com)
+* **Render Frontend Web App:** [https://aeroopt-frontend.onrender.com](https://aeroopt-frontend.onrender.com)
+* **Render Backend API & WebSocket:** [https://aeroopt-backend.onrender.com](https://aeroopt-backend.onrender.com)
 * **AWS S3 Live Portal:** [http://aeroopt-ai-frontend-473412285410.s3-website.ap-south-1.amazonaws.com](http://aeroopt-ai-frontend-473412285410.s3-website.ap-south-1.amazonaws.com)
 * **Local Development Dashboard:** `http://localhost:5173`
 * **Local Backend API & WebSocket Server:** `http://localhost:5000`
