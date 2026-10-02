@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+*/node_modules/
+*/*/node_modules/
+*/*/*/node_modules/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+*.env
+
+# Build outputs
+dist/
+client/dist/
+cdk.out/
+*/cdk.out/
+
+# AgentCore CLI caches and logs
+.cli/
+*/.cli/
+*/*/.cli/
+.llm-context/
+*/.llm-context/
+.agents/
+*/.agents/
+
+# Logs & Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# OS & Editor Files
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.vscode/
+.idea/

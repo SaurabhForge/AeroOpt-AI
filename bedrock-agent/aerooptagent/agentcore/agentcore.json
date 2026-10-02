@@ -1,0 +1,45 @@
+{
+  "$schema": "https://schema.agentcore.aws.dev/v1/agentcore.json",
+  "name": "aerooptagent",
+  "version": 1,
+  "managedBy": "CDK",
+  "tags": {
+    "agentcore:created-by": "agentcore-cli",
+    "agentcore:project-name": "aerooptagent"
+  },
+  "runtimes": [
+    {
+      "name": "aeroopttactical",
+      "build": "Container",
+      "entrypoint": "main.py",
+      "codeLocation": "app/aeroopttactical/",
+      "dockerfile": "Dockerfile",
+      "runtimeVersion": "PYTHON_3_14",
+      "networkMode": "PUBLIC",
+      "protocol": "HTTP",
+      "additionalPolicies": [
+        "policies/bma-acr-policy.json"
+      ],
+      "tags": {
+        "agentcore:template": "BedrockManagedAgents"
+      },
+      "lifecycleConfiguration": {
+        "idleRuntimeSessionTimeout": 1800,
+        "maxLifetime": 28800
+      }
+    }
+  ],
+  "memories": [],
+  "knowledgeBases": [],
+  "credentials": [],
+  "evaluators": [],
+  "onlineEvalConfigs": [],
+  "agentCoreGateways": [],
+  "policyEngines": [],
+  "configBundles": [],
+  "abTests": [],
+  "harnesses": [],
+  "datasets": [],
+  "capacityProviders": [],
+  "payments": []
+}
