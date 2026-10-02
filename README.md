@@ -9,6 +9,7 @@
 [![Socket.IO](https://img.shields.io/badge/Socket.IO-Real--Time-010101.svg?logo=socketdotio)](https://socket.io/)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-38B2AC.svg?logo=tailwind-css)](https://tailwindcss.com/)
 [![AWS Bedrock](https://img.shields.io/badge/AWS-Bedrock%20AgentCore-FF9900.svg?logo=amazon-aws)](https://aws.amazon.com/bedrock/)
+[![Render](https://img.shields.io/badge/Render-Cloud%20Blueprint-46E3B7.svg?logo=render)](https://render.com)
 
 > **Air Power: Dynamic Air Operations & Resource Optimisation System**  
 > An AI-enabled decision-support platform designed for authorized military and air operations planners. AeroOpt AI consolidates fragmented airframe availability, crew readiness, severe weather restrictions, and mission priorities into a single operational picture, computing optimal sortie schedules in **sub-20 milliseconds**.
@@ -17,6 +18,8 @@
 
 ## 🌐 Live Cloud Deployment
 
+* **Render Frontend Web App:** [https://aeroopt-ai-frontend.onrender.com](https://aeroopt-ai-frontend.onrender.com)
+* **Render Backend API & WebSocket:** [https://aeroopt-ai-backend.onrender.com](https://aeroopt-ai-backend.onrender.com)
 * **AWS S3 Live Portal:** [http://aeroopt-ai-frontend-473412285410.s3-website.ap-south-1.amazonaws.com](http://aeroopt-ai-frontend-473412285410.s3-website.ap-south-1.amazonaws.com)
 * **Local Development Dashboard:** `http://localhost:5173`
 * **Local Backend API & WebSocket Server:** `http://localhost:5000`
@@ -199,6 +202,22 @@ npm install
 npm run dev
 ```
 *The client dashboard will launch at `http://localhost:5173`.*
+
+---
+
+## ☁️ Deploying to Render (Blueprint IaC)
+
+AeroOpt AI includes an automated **Render Infrastructure-as-Code Blueprint** (`render.yaml`).
+
+### One-Click Blueprint Deployment:
+1. Fork or push this repository to your GitHub account (`SaurabhForge/AeroOpt-AI`).
+2. Log into the [Render Dashboard](https://dashboard.render.com).
+3. Click **New +** -> **Blueprint**.
+4. Connect the repository `AeroOpt-AI`.
+5. Render will automatically detect `render.yaml` and provision both services:
+   - **`aeroopt-ai-backend`**: Node.js Web Service on the free tier running Express & Socket.IO with automatic health monitoring (`/health`).
+   - **`aeroopt-ai-frontend`**: Static Site hosting the React 19 SPA with single-page app rewrites and pre-configured API routing.
+6. Click **Apply** to deploy!
 
 ---
 

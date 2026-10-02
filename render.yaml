@@ -1,0 +1,47 @@
+# AeroOpt AI — Render Infrastructure-as-Code Blueprint
+# Deploy via Render Dashboard -> Blueprints -> New Blueprint Instance
+# Docs: https://render.com/docs/blueprint-spec
+
+services:
+  # ─── 1. Backend REST & Real-Time WebSocket API ────────────────────────────────
+  - type: web
+    name: aeroopt-ai-backend
+    runtime: node
+    plan: free
+    region: oregon
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CORS_ORIGIN
+        value: "*"
+      # Optional: Connect external MongoDB / Redis if available.
+      # If omitted, AeroOpt AI automatically initializes its embedded in-memory DB and cache.
+      # - key: MONGO_URI
+      #   value: mongodb+srv://...
+      # - key: REDIS_URL
+      #   value: redis://...
+
+  # ─── 2. Frontend React 19 Tactical Mission HUD (Static Site) ──────────────────
+  - type: web
+    name: aeroopt-ai-frontend
+    runtime: static
+    plan: free
+    region: oregon
+    rootDir: client
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_API_URL
+        value: https://aeroopt-ai-backend.onrender.com

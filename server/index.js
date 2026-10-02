@@ -11,10 +11,21 @@ const redis = require('./lib/redis');
 
 const app = express();
 const server = http.createServer(app);
-const io = new Server(server, { cors: { origin: 'http://localhost:5173', credentials: true } });
 
-app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
+// CORS configuration supporting local dev, Render domains, and custom origins
+const corsOptions = {
+  origin: (origin, callback) => callback(null, true),
+  credentials: true
+};
+
+const io = new Server(server, { cors: corsOptions });
+
+app.use(cors(corsOptions));
 app.use(express.json());
+
+// Health check endpoint for Render zero-downtime health monitoring
+app.get('/health', (req, res) => res.status(200).send('OK'));
+app.get('/api/health', (req, res) => res.status(200).json({ status: 'HEALTHY', uptime: process.uptime() }));
 
 // attach io to req
 app.use((req, res, next) => { req.io = io; next(); });

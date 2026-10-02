@@ -1,6 +1,16 @@
 import axios from 'axios';
 
-const api = axios.create({ baseURL: 'http://localhost:5000/api' });
+const getApiBase = () => {
+  if (import.meta.env.VITE_API_URL) {
+    return `${import.meta.env.VITE_API_URL.replace(/\/$/, '')}/api`;
+  }
+  if (typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+    return 'https://aeroopt-ai-backend.onrender.com/api';
+  }
+  return 'http://localhost:5000/api';
+};
+
+const api = axios.create({ baseURL: getApiBase() });
 
 api.interceptors.request.use(cfg => {
   const token = localStorage.getItem('aeroopt_token');

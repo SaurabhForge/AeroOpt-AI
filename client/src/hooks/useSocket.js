@@ -9,7 +9,12 @@ export function useSocket() {
 
   useEffect(() => {
     if (!socket) {
-      socket = io('http://localhost:5000', { withCredentials: true });
+      const socketUrl = import.meta.env.VITE_API_URL
+        ? import.meta.env.VITE_API_URL.replace(/\/$/, '')
+        : (typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1')
+          ? 'https://aeroopt-ai-backend.onrender.com'
+          : 'http://localhost:5000';
+      socket = io(socketUrl, { withCredentials: true });
     }
 
     const events = ['resource:updated', 'schedule:proposed', 'schedule:approved', 'schedule:rejected', 'scenario:complete'];
