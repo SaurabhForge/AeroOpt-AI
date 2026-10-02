@@ -3,6 +3,8 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const redis = require('../lib/redis');
 
+const JWT_SECRET = process.env.JWT_SECRET || 'aeroopt_secure_ops_jwt_secret_2026';
+
 router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -108,7 +110,7 @@ router.post('/login', async (req, res) => {
 
     const token = jwt.sign(
       { id: user._id, email: user.email, name: user.name, role: user.role },
-      process.env.JWT_SECRET,
+      JWT_SECRET,
       { expiresIn: '8h' }
     );
 
