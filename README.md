@@ -227,7 +227,7 @@ npm run dev
 * **Team Member**: [Ashish Kumar](https://github.com/Ashish666-28) , Vishwas havalada
 * 
 * **Problem Statement:** Air Power — Dynamic Air Operations & Resource Optimisation
-* **Organization:** Indian Air Force (IAF) Decision Support System
+* **Organization:** Ministry of Defence (MoD) Decision Support System
 
 ---
 
