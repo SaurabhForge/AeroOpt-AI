@@ -224,8 +224,8 @@ npm run dev
 ## 👨‍✈️ Author & Credits
 
 * **Lead Engineer:** [Saurabh Kumar](https://github.com/SaurabhForge)
-* **Team Member**: [Ashish Kumar](https://github.com/Ashish666-28) , Vishwas havalada
-* 
+* **Team Member**: [Ashish Kumar](https://github.com/Ashish666-28)
+* **Team Member**: [Vishwas havalada](https://github.com/vishwa424)
 * **Problem Statement:** Air Power — Dynamic Air Operations & Resource Optimisation
 * **Organization:** Ministry of Defence (MoD) Decision Support System
 
