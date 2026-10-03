@@ -246,7 +246,7 @@ AeroOpt AI includes an automated **Render Infrastructure-as-Code Blueprint** (`r
 * **Team Member**: [Ashish Kumar](https://github.com/Ashish666-28)
 * **Team Member**: [Vishwas havalada](https://github.com/vishwa424)
 * **Team Member**: [Anantdhar Dubey](https://github.com/AnantdharDubey06)
-* **Team Member**:[Snehashis Roy](https://github.com/snehashisroy1212)
+* **Team Member**: [Snehashis Roy](https://github.com/snehashisroy1212)
 * **Problem Statement:** Air Power — Dynamic Air Operations & Resource Optimisation
 * **Organization:** Ministry of Defence (MoD) Decision Support System
 
